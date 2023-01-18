@@ -1,11 +1,11 @@
 <?php 
-    // session_start();
-    // $email = $_SESSION['email'];
-    // $type = $_SESSION['type'] == "U";
-    // if(!isset($email) && !isset($type)){
-    //     $_SESSION['msg'] = 'Anda harus login untuk mengakses halaman ini';
-    //     header('Location: ../login.php');
-    // }
+    session_start();
+    $email = $_SESSION['email'];
+    $type = $_SESSION['type'] == "U";
+    if(!isset($email) && !isset($type)){
+        $_SESSION['msg'] = 'Anda harus login untuk mengakses halaman ini';
+        header('Location: ../login.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +53,7 @@
           </a>
         </li>
         <li class="log_out">
-          <a href="#">
+          <a href="../logout.php">
             <i class='bx bx-log-out'></i>
             <span class="links_name">Log out</span>
           </a>

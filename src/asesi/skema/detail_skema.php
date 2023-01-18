@@ -124,6 +124,12 @@
                       </div>
                     </div>
                   </div>
+                  <form method="post">
+                      <h3>Action</h3>
+                        <div class="container-fluid">
+                          <a href="../create_asesi.php?id_schema=<?= $data['id_schema'] ?>" class="btn btn-info">Daftar Uji Kompetensi</a>
+                        </div>
+                  </form>
                 </div>
               </div>
             </div>

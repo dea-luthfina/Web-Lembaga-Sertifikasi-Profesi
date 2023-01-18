@@ -32,7 +32,7 @@
                 <div class="card-body">
                   <i class="fa-solid fa-award text-warning pe-1 fs-4"></i>
                   <strong class="fs-5">Grade</strong>
-                  <p class="m-0 mt-1 fs-4"><?= $row['grade']?></p>
+                  <p class="m-0 mt-1 fs-4">90</p>
                 </div>
               </div>
             </div>
@@ -56,14 +56,6 @@
                         <tr>
                           <th>Jenis Kelamin</th>
                           <td>".$row["gender"]."</td>
-                        </tr>
-                        <tr>
-                          <th>Provinsi</th>
-                          <td>".$row["province"]."</td>
-                        </tr>
-                        <tr>
-                          <th>Kota</th>
-                          <td>".$row["city"]."</td>
                         </tr>
                         <tr>
                           <th>Alamat</th>

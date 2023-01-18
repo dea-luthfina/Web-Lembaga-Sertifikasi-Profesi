@@ -81,7 +81,7 @@
         </nav>
 
         <div class="home-content">
-            <div class="container px-5" style="padding-bottom: 50px;">
+            <div class="container" style="padding-bottom: 50px;">
                 <div style="color: red;">
                     <?php 
                         if(isset($_POST['submit'])){
@@ -93,14 +93,13 @@
                                     //schema_cover
                                     $file_tmp= $_FILES['schema_cover']['tmp_name'];
                                     $type = pathinfo($file_tmp, PATHINFO_EXTENSION); 
-                                    $data = file_get_contents($file_tmp); 
-                                    $schema_cover='data:assets/img/' . $type.';base64,'. base64_encode($data);
-
-                                    //schema_unit
-                                    $file_tmp2= $_FILES['schema_unit']['tmp_name'];
-                                    $type2 = pathinfo($file_tmp2, PATHINFO_EXTENSION); 
-                                    $data2 = file_get_contents($file_tmp2); 
-                                    $schema_unit='data:assets/units/' . $type2.';base64,'. base64_encode($data2);
+                                    $data = file_get_contents($file_tmp);
+                                    $schema_cover = 'data:assets/img/' . $type . ';base64,' . base64_encode($data);
+                                    
+                                    $file_tmp= $_FILES['schema_cover']['tmp_name'];
+                                    $type = pathinfo($file_tmp, PATHINFO_EXTENSION); 
+                                    $data = file_get_contents($file_tmp);
+                                    $schema_cover = 'data:assets/img/' . $type . ';base64,' . base64_encode($data);
     
                                     $script = "INSERT INTO certification_schema SET schema_name='$schema_name', description='$description', schema_unit='$schema_unit', 
                                     schema_cover='$schema_cover'";
@@ -116,10 +115,11 @@
                             }
                         }
                     ?>
+                    
                 </div>
 
                 <form method="post" enctype="multipart/form-data">
-                    <h1 class="text-center mb-5">Tambah Data Skema</h1>
+                    <h1 class="text-center">Tambah Data Skema</h1>
                     <div class="form-group">
                         <label>Nama Skema</label>
                         <input type="text" class="form-control" name="schema_name" required autocomplete="off">
@@ -130,13 +130,13 @@
                     </div>
                     <div class="form-group">
                         <label>Unit Skema (File bereksistensi .pdf)</label>
-                        <input type="file" class="form-control-file" name="schema_unit" style="padding: 5px;" required>
+                        <input type="file" class="form-control" name="schema_unit" style="padding: 5px;" required>
                     </div>
                     <div class="form-group">
                         <label>Foto Cover Skema</label>
-                        <input type="file" class="form-control-file" name="schema_cover" style="padding: 5px;" required>
+                        <input type="file" class="form-control" name="schema_cover" style="padding: 5px;" required>
                     </div>
-                    <center><input type="submit" class="btn btn-success" name="submit" value="Submit"></center>
+                    <input type="submit" class="btn btn-success" name="submit" value="Add">
                 </form>
             </div>
         </div>

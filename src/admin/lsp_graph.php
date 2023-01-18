@@ -141,7 +141,7 @@ while ($row = mysqli_fetch_assoc($result2)) {
                     scales: {
                         y: {
                             beginAtOne: true,
-                            max: 50,
+                            max: 10,
                             min: 0
                         }
                     }

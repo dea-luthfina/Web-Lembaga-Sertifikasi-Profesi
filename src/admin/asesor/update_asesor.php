@@ -111,7 +111,6 @@
                     $exp_date_sertificate = $_POST['exp_date_sertificate'];
                     $institutional_name = $_POST['institutional_name'];
                     $id_schema = $_POST['id_schema'];
-                    $schema_name = $_POST['schema_name'];
     
                     //foto asesor
                     $file_tmp = $_FILES['assessor_photo']['tmp_name'];
@@ -121,7 +120,7 @@
     
                     // Update data into the database
                     $sql = "UPDATE assessor SET assessor_name='$assessor_name', birth_place='$birth_place', birth_date='$birth_date', gender='$gender', nationality='$nationality', address='$address', email='$email', phone_number='$phone_number', education_level='$education_level', 
-                    bnsp_reg_num='$bnsp_reg_num', exp_date_sertificate='$exp_date_sertificate', institutional_name='$institutional_name', id_schema='$id_schema', schema_name='$schema_name', assessor_photo='$assessor_photo' WHERE nik_number='$nik_number'";
+                    bnsp_reg_num='$bnsp_reg_num', exp_date_sertificate='$exp_date_sertificate', institutional_name='$institutional_name', id_schema='$id_schema', assessor_photo='$assessor_photo' WHERE nik_number='$nik_number'";
                     
                     //check if the data updated to database
                     $result = mysqli_query($conn, $sql);
@@ -140,10 +139,6 @@
                 <div class="form-group">
                     <label>ID Skema</label>
                     <input type="number" class="form-control" name="id_schema" required value="<?= $data['id_schema']?>">
-                </div>
-                <div class="form-group">
-                    <label>Nama Skema</label>
-                    <input type="text" class="form-control" name="schema_name" required value="<?= $data['schema_name']?>">
                 </div>
                 <h4 class="text-center">Data Asesor</h4>
                 <div class="form-group">

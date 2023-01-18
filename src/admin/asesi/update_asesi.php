@@ -1,5 +1,6 @@
 <!-- panggil config -->
-<?php require "../../../config/config.php"?>
+<?php require "../../../config/config.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,6 +89,7 @@
               $script = "SELECT * FROM accession WHERE id_accession = '$id_accession'"; 
               $query = mysqli_query($conn, $script); 
               $data = mysqli_fetch_array($query); 
+              
                 //inisialisasi data
               if(isset($_POST['submit'])) {
                 if(isset($_FILES['accession_photo'])){
@@ -98,8 +100,6 @@
                   $email = $_POST['email'];
                   $birth_place = $_POST['birth_place'];
                   $birth_date = $_POST['birth_date'];
-                  $province = $_POST['province'];
-                  $city = $_POST['city'];
                   $address = $_POST['address'];
                   $education = $_POST['education'];
                   $university = $_POST['university'];
@@ -107,6 +107,8 @@
                   $semester = $_POST['semester'];
                   $internship_company = $_POST['internship_company'];
                   $business_field = $_POST['business_field'];
+                  $id_user = $data['id_user'];
+                  $id_schema = $data['id_schema'];
   
                   //foto asesor
                   $file_tmp = $_FILES['accession_photo']['tmp_name'];
@@ -115,9 +117,9 @@
                   $accession_photo = 'data:assets/img/' . $type . ';base64,' . base64_encode($data);
   
                   // insert the form data into the database
-                  $query = "UPDATE accession SET ktp='$ktp', accession_name='$accession_name', accession_photo='$accession_photo', gender='$gender', phone='$phone', email='$email', 
-                  birth_place='$birth_place', birth_date='$birth_date', province='$province', city='$city', address='$address', education='$education', university='$university', 
-                  program='$program', semester='$semester', internship_company='$internship_company', business_field='$business_field')";
+                  $query = "UPDATE accession SET ktp='$ktp', accession_name='$accession_name', accession_photo='$accession_photo', gender='$gender', phone='$phone', email='$email', birth_date='$birth_date',
+                  birth_place='$birth_place', address='$address', education='$education', university='$university', program='$program', semester='$semester',
+                  internship_company='$internship_company', business_field='$business_field', id_schema='$id_schema,', id_user='$id_user' WHERE id_accession = '$id_accession'";
                   
                   
                   //check if the data inserted to database
@@ -196,50 +198,6 @@
                       <label class="form-check-label" for="perempuan">Perempuan</label>
                   </div>
               </div>
-              <div class="form-group">
-                <td><label for="province">Provinsi</label></td>
-                <td><select class="combobox form-control select2" name="province" required>
-                    <option value="">-- Pilih Provinsi --</option>
-                    <option value="aceh">Aceh</option>
-                    <option value="Sumut">Sumatera Utara</option>
-                    <option value="sumbar">Sumatera Barat</option>
-                    <option value="Riau">Riau</option>
-                    <option value="Jambi">Jambi</option>
-                    <option value="Sumsel">Sumatera Selatan</option>
-                    <option value="Bengkulu">Bengkulu</option>
-                    <option value="Lampung">Lampung</option>
-                    <option value="BaBel">Kep. Bangka Belitung</option>
-                    <option value="kepRiau">Kepulauan Riau</option>
-                    <option value="Jakarta">Jakarta</option>
-                    <option value="Jabar">Jawa Barat</option>
-                    <option value="Banten">Banten</option>
-                    <option value="Jateng">Jawa Tengah</option>
-                    <option value="Yogyakarta">Yogyakarta</option>
-                    <option value="Jatim">Jawa Timur</option>
-                    <option value="Kalbar">Kalimantan Barat</option>
-                    <option value="Kalteng">Kalimantan Tengah</option>
-                    <option value="Kalsel">Kalimantan Selatan</option>
-                    <option value="Kaltim">Kalimantan Timur</option>
-                    <option value="Kaltra">Kalimantan Utara</option>
-                    <option value="Bali">Bali</option>
-                    <option value="NTT">Nusa Tenggara Timur</option>
-                    <option value="NTB">Nusa Tenggara Barat</option>
-                    <option value="Sulut">Sulawesi Utara</option>
-                    <option value="Sulteng">Sulawesi Tengah</option>
-                    <option value="Sulsel">Sulawesi Selatan</option>
-                    <option value="Sultengg">Sulawesi Tenggara</option>
-                    <option value="Sulbar">Sulawesi Barat</option>
-                    <option value="Gorontalo">Gorontalo</option>
-                    <option value="Maluku">Maluku</option>
-                    <option value="Maluku Utara">Maluku Utara</option>
-                    <option value="Papua">Papua</option>
-                    <option value="Papua Barat">Papua Barat</option>
-                </select></td>
-            </div>
-            <div class="form-group">
-                <td><label for="city">Kota</label></td>
-                <td><input type="text" class="combobox form-control select2" placeholder="Jakarta Selatan" name="city" required value="<?= $data['city']; ?>"></td>
-            </div>
               <div class="form-group">
                   <label>Alamat</label>
                   <input type="text" class="form-control" placeholder="Alamat lengkap sesuai KTP" name="address" required value="<?= $data['address']; ?>">
