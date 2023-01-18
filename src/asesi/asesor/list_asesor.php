@@ -19,7 +19,7 @@
       <i class='bx bxl-c-plus-plus'></i>
       <span class="logo_name">LSP TELEMATIKA</span>
     </div>
-      <ul class="nav-links">
+    <ul class="nav-links">
         <li>
           <a href="../dashboard_asesi.php">
             <i class='bx bx-grid-alt' ></i>
@@ -27,7 +27,7 @@
           </a>
         </li>
         <li>
-          <a href="list_asesor.php" class="active">
+          <a href="../asesor/list_asesor.php">
             <i class="fa-solid fa-chalkboard-user"></i>
             <span class="links_name">Asesor</span>
           </a>
@@ -39,7 +39,7 @@
           </a>
         </li>
         <li>
-          <a href="../skema/list_skema.php">
+          <a href="list_skema.php"  class="active">
           <i class="fa-solid fa-folder-open"></i>
             <span class="links_name">Skema</span>
           </a>

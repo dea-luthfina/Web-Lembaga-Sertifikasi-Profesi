@@ -79,7 +79,7 @@
         </nav>
 
         <div class="home-content">
-        <div class="overview-boxes">
+        <!-- <div class="overview-boxes">
             <div class="box">
             <div class="right-side">
                 <center>
@@ -128,7 +128,7 @@
                 </center>
             </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="sales-boxes">
         <div class="recent-sales box">

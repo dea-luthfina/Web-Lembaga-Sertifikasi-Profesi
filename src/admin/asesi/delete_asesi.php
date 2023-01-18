@@ -1,17 +1,17 @@
 <?php
-    if(isset($_POST["nik_number"]) && !empty($_POST["nik_number"])){
+    if(isset($_POST["id_accession"]) && !empty($_POST["id_accession"])){
 
         require_once "../../../config/config.php";
 
-        $sql = "DELETE FROM assessor WHERE nik_number = ?";
+        $sql = "DELETE FROM accession WHERE id_accession = ?";
 
         if($stmt = mysqli_prepare($conn, $sql)){
-            mysqli_stmt_bind_param($stmt, "i", $param_nik_number);
+            mysqli_stmt_bind_param($stmt, "i", $param_id_accession);
 
-            $param_nik_number = trim($_POST["nik_number"]);
+            $param_id_accession = trim($_POST["id_accession"]);
 
             if(mysqli_stmt_execute($stmt)){
-                header("location: list_asesor.php");
+                header("location: list_asesi.php");
                 exit();
             } else {
                 echo "Oops! SOmething went wrong. Please try again later.";
@@ -22,7 +22,7 @@
 
         mysqli_close($conn);
     } else {
-        if(empty(trim($_GET["nik_number"]))){
+        if(empty(trim($_GET["id_accession"]))){
             header("location: error.php");
             exit();
         }
@@ -125,10 +125,10 @@
                             </div>
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                                 <div class="alert alert-danger fade in">
-                                    <input type="hidden" name="nik_number" value="<?php echo trim($_GET["nik_number"]); ?>"/>
+                                    <input type="hidden" name="id_accession" value="<?php echo trim($_GET["id_accession"]); ?>"/>
                                     <p>Are you sure want to delete this data?</p></br>
                                     <p>
-                                        <a href="list_asesor.php" class="btn btn-danger">No</a>
+                                        <a href="list_asesi.php" class="btn btn-danger">No</a>
                                         <input type="submit" value="Yes" class="btn btn-success">
                                     </p>
                                 </div>

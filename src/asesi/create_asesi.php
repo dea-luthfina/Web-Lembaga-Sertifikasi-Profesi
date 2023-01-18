@@ -65,31 +65,31 @@
     <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">LSP Telematika</span>
+      <span class="logo_name">LSP TELEMATIKA</span>
     </div>
-      <ul class="nav-links">
+    <ul class="nav-links">
         <li>
-          <a href="dashboard_admin.php" class="active">
+          <a href="../dashboard_asesi.php">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="create_asesi.php">
+          <a href="../asesor/list_asesor.php">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <span class="links_name">Asesor</span>
+          </a>
+        </li>
+        <li>
+          <a href="../create_asesi.php">
             <i class="fa-solid fa-users"></i>
-            <span class="links_name">Pendaftaran Asesi</span>
+            <span class="links_name">Asesi</span>
           </a>
         </li>
         <li>
-          <a href="../admin/skema/list_skema.php">
+          <a href="list_skema.php"  class="active">
           <i class="fa-solid fa-folder-open"></i>
-            <span class="links_name">Daftar Skema</span>
-          </a>
-        </li>
-        <li>
-          <a href="lsp_graph.php">
-            <i class="fa-solid fa-chart-simple"></i>
-            <span class="links_name">Daftar Nilai</span>
+            <span class="links_name">Skema</span>
           </a>
         </li>
         <li class="log_out">

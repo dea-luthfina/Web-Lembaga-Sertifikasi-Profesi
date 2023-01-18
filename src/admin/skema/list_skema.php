@@ -93,7 +93,7 @@
                 <div class="row mt-5" style="padding-left: 50px; padding-right: 50px;">
                     <?php
                         // pagination, batas itu contentnya ada berapa dalam satu page
-                        $batas = 6; 
+                        $batas = 3; 
                         $halaman = $_GET['halaman'] ?? null;
 
                         if(empty($halaman)){

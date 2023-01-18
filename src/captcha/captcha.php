@@ -2,7 +2,7 @@
     session_start();
 
     function randomCaptcha(){
-        $alphabet = "aaaaaa";
+        $alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
         $pass = array();
 

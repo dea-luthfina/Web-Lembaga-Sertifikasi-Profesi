@@ -110,7 +110,7 @@
             <h1 class="text-center mb-5">Detail Skema</h1>
               <div class="row pb-5"> 
                 <div class="col-4">
-                <img class="rounded-lg border border-dark" src="<?= $data['schema_cover'] ?>" width="80%" alt="">
+                  <img class="rounded-lg border border-dark" src="<?= $data['schema_cover'] ?>" width="80%" alt="">
                 </div> 
                 <div class="col-7 p-3 shadow" style="background-color: white;">
                   <h4>Nama Skema</h4>
@@ -133,6 +133,7 @@
                   <form method="post">
                     <h3>Action</h3>
                     <div class="container-fluid">
+                      <a  class="btn btn-success"><i class="fa-solid fa-file-pdf"></i> Download Unit</a>
                       <a href="../asesor/create_asesor.php?id_schema=<?= $data['id_schema'] ?>" class="btn btn-info">Tambah Data Asesor</a>
                       <input type="submit" name="hapus" value="Delete" class="btn btn-danger"> 
                     </div>

@@ -33,7 +33,6 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +44,7 @@
       <i class='bx bxl-c-plus-plus'></i>
       <span class="logo_name">LSP TELEMATIKA</span>
     </div>
-      <ul class="nav-links p-0">
+    <ul class="nav-links">
         <li>
           <a href="../dashboard_asesi.php">
             <i class='bx bx-grid-alt' ></i>
@@ -78,7 +77,6 @@
         </li>
       </ul>
     </div>
-
     <section class="home-section">
         <!-- navigation -->
         <nav>
@@ -104,7 +102,7 @@
             <h1 class="text-center mb-5">Detail Skema</h1>
               <div class="row pb-5"> 
                 <div class="col-4">
-                  <img class="rounded-lg border border-dark" src="../../../assets/img/cover-3.png" width="80%" alt="">
+                <img class="rounded-lg border border-dark" src="<?= $data['schema_cover'] ?>" width="80%" alt="">
                 </div> 
                 <div class="col-7 p-3 shadow" style="background-color: white;">
                   <h4>Nama Skema</h4>
@@ -127,6 +125,7 @@
                   <form method="post">
                       <h3>Action</h3>
                         <div class="container-fluid">
+                          <a href="" class="btn btn-success"><i class="fa-solid fa-file-pdf"></i> Download Unit</a>
                           <a href="../create_asesi.php?id_schema=<?= $data['id_schema'] ?>" class="btn btn-info">Daftar Uji Kompetensi</a>
                         </div>
                   </form>
